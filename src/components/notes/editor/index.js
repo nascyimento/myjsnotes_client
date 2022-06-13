@@ -1,8 +1,11 @@
 import { Fragment, useState, useEffect } from "react";
-import ReactQuill from 'react-quill';
+import ReactQuill, { Quill } from 'react-quill';
+import { useQuill } from "react-quilljs"; 
 import 'react-quill/dist/quill.snow.css';
 
 const Editor = (props) => {
+
+    const {quill, quillRef} = useQuill();
 
     let [currentContent, setCurrentContent] = useState('')
     let [timer, setTimer] = useState(null);
@@ -36,9 +39,16 @@ const Editor = (props) => {
     }
 
     return (
-        <Fragment>
-            <ReactQuill value={currentContent} theme={'snow'} modules={modules} onChange={handleChange} />
-        </Fragment>
+        // <Fragment>
+        //     <ReactQuill value={currentContent} modules={modules} onChange={handleChange} />
+        // </Fragment>
+        <div>
+            <div style={{width: 500, heigth: 300}}>
+                <div ref={quillRef}>
+
+                </div>
+            </div>
+        </div>
     )
 }
 
