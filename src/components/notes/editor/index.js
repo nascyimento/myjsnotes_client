@@ -5,8 +5,8 @@ import 'react-quill/dist/quill.snow.css';
 
 const Editor = (props) => {
 
-    const { quill, quillRef } = useQuill();
 
+    const { quill, quillRef } = useQuill();
     let [currentContent, setCurrentContent] = useState('')
     let [timer, setTimer] = useState(null);
 
@@ -21,6 +21,10 @@ const Editor = (props) => {
     useEffect(() => {
         setCurrentContent(props.note.body)
     }, [props.note]);
+
+    useEffect(() => {
+        quill.innerHtml = currentContent;
+    }, [quill]);
 
     const updateNote = (content) => {
         let title = content.replace(/(<([^>]+)>)/ig, " ").substring(0, 15);
@@ -45,7 +49,6 @@ const Editor = (props) => {
         <div>
             <div style={{ width: 500, heigth: 300 }}>
                 <div ref={quillRef} value={currentContent} onChange={handleChange}>
-
                 </div>
             </div>
         </div>
