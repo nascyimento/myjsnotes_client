@@ -23,36 +23,38 @@ const Editor = (props) => {
     }, [props.note]);
 
     useEffect(() => {
-        quill.innerHtml = currentContent;
+        if (quill) {
+            quill.clipboard.dangerouslyPasteHTML('<h1>React Hook for Quill!</h1>');
+        }
     }, [quill]);
 
-    const updateNote = (content) => {
-        let title = content.replace(/(<([^>]+)>)/ig, " ").substring(0, 15);
-        props.updateNote(props.note, { 'title': title, 'body': content });
-    }
+const updateNote = (content) => {
+    let title = content.replace(/(<([^>]+)>)/ig, " ").substring(0, 15);
+    props.updateNote(props.note, { 'title': title, 'body': content });
+}
 
-    const modules = {
-        toolbar: [
-            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-            ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' },
-            { 'indent': '-1' }, { 'indent': '+1' }],
-            ['link'],
-            ['clean'],
-        ]
-    }
+const modules = {
+    toolbar: [
+        [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+        ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' },
+        { 'indent': '-1' }, { 'indent': '+1' }],
+        ['link'],
+        ['clean'],
+    ]
+}
 
-    return (
-        // <Fragment>
-        //     <ReactQuill value={currentContent} modules={modules} onChange={handleChange} />
-        // </Fragment>
-        <div>
-            <div style={{ width: 500, heigth: 300 }}>
-                <div ref={quillRef} value={currentContent} onChange={handleChange}>
-                </div>
+return (
+    // <Fragment>
+    //     <ReactQuill value={currentContent} modules={modules} onChange={handleChange} />
+    // </Fragment>
+    <div>
+        <div style={{ width: 500, heigth: 300 }}>
+            <div ref={quillRef} onChange={console.log('123')}>
             </div>
         </div>
-    )
+    </div>
+)
 }
 
 export { Editor }
