@@ -37,7 +37,7 @@ const Editor = (props) => {
 
     return (
         <Fragment>
-            <ReactQuill value={currentContent} modules={modules} onChange={handleChange} />
+            <ReactQuill value={currentContent} theme={'snow'} modules={modules} onChange={handleChange} />
         </Fragment>
     )
 }
