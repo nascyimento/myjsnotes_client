@@ -1,0 +1,9 @@
+@import "./custom-colors.scss";
+
+form {
+  width: 100%;
+}
+
+.control .column, .control .column .is-outlined {
+  width: 100%;
+}

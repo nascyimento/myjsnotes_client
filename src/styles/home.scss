@@ -1,0 +1,30 @@
+@import "./custom-colors.scss";
+
+.card {
+  border-radius: 25px;
+  box-shadow: 0px 0px 10px $custom-purple-dark;
+}
+
+.home {
+  background-color: $custom-purple;
+  min-height: calc(100vh - 70px);
+}
+
+.card-content {
+  border-radius: 15px;
+}
+
+.columns {
+  align-items: center;
+}
+
+@media (max-width: 790px) {
+  .columns {
+    flex-direction: column !important;
+    align-items: center;
+  }
+
+  img.presentation {
+    display: none;
+  }
+}

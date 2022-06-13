@@ -1,0 +1,41 @@
+@import "./custom-colors";
+
+nav.navbar {
+  height: 70px;
+  border-bottom: 1px solid black;
+  .navbar-brand {
+    img {
+      height: 40px;
+    }
+  }
+}
+
+.navbar-brand {
+  align-items: center;
+}
+
+.is-custom-purple {
+  background-color: $custom-purple;
+  color: white;
+}
+
+.navbar-logged {
+  .navbar-menu {
+    background-color: $custom-purple;
+  }
+}
+
+@media (min-width: 1024px) {
+  nav.navbar {
+    display: flex;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .navbar-brand {
+    img {
+      margin-top: 15px !important;
+    }
+  }
+}

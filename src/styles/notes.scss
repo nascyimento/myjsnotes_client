@@ -1,0 +1,43 @@
+@import "./custom-colors.scss";
+
+.notes {
+  height: calc(100% - 70px);
+  margin: 0px;
+}
+
+.ql-editor {
+  height: calc(100vh - 114px);
+}
+
+.bm-menu,
+.notes,
+body,
+html {
+  background-color: $custom-purple-light;
+}
+
+.bm-item-list {
+  height: calc(100vh - 112px) !important;
+  width: fit-content;
+  overflow: auto;
+  overflow-x: hidden;
+}
+
+.bm-menu-wrap,
+.bm-overlay {
+  z-index: 1 !important;
+  top: 113px;
+}
+
+.list-item.is-active {
+  background-color: $custom-purple-lighter;
+}
+
+.notes-editor {
+  padding: 0;
+  height: calc(100% - 43px);
+
+  .quill {
+    height: 100%;
+  }
+}
