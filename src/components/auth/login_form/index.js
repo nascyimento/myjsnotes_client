@@ -14,6 +14,7 @@ const LoginForm = () => {
     const handleSubmit = async (event) => {
         try {
             event.preventDefault();
+            console.log('123')
             await UsersService.login({ email: email, password: password });
             setRedirectToNotes(true);
         } catch (error) {

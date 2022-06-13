@@ -86,7 +86,8 @@ const Notes = (props) => {
                         isOpen={props.isOpen}
                         currentNote={currentNote}
                         createNote={createNote}
-                        deleteNote={deleteNote} />
+                        deleteNote={deleteNote}
+                        fetchNotes={fetchNotes} />
                 </Menu>
                 {currentNote &&
                     <Column size={12} className="notes-editor" id="notes-editor">

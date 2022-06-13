@@ -66,10 +66,10 @@ const UsersEditForm = () => {
                         </Column.Group>
                     </Control>
                 </Field>
-                {status == "error" &&
+                {status === "error" &&
                     <Help color="danger">Problem in update</Help>
                 }
-                {status == "success" &&
+                {status === "success" &&
                     <Help color="primary">Updated with success</Help>
                 }
             </form>

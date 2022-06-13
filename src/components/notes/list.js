@@ -5,6 +5,7 @@ import { Button, Column, List, Tag, Title } from "rbx";
 import React, { Fragment } from 'react';
 
 const ListNotes = (props) => {
+
     return (
         <Fragment>
             <Column.Group breakpoint="mobile">
