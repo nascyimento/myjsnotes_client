@@ -22,10 +22,9 @@ const UsersEditForm = () => {
         
         try {
             await UsersService.update({ email: email, name: name });
-            console.log('123')
-            setStatus("success")
+            setStatus("success");
         } catch (err) {
-            setStatus("error")
+            setStatus("error");
         }
     }
 
