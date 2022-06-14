@@ -10,7 +10,7 @@ import { Search } from "./search";
 const Notes = (props) => {
 
     let [notes, setNotes] = useState([]);
-    let [currentNote, setCurrentNote] = useState({ title: '', body: '', id: '' })
+    let [currentNote, setCurrentNote] = useState({ title: '', body: '', _id: '' })
 
     const selectNote = (id) => {
         let note = notes.find((note) => {
@@ -26,7 +26,6 @@ const Notes = (props) => {
     const fetchNotes = async () => {
         const response = await NotesService.index();
         setNotes(response.data.reverse());
-        setCurrentNote(response.data[0]);
     }
 
     const createNote = async () => {
@@ -44,7 +43,7 @@ const Notes = (props) => {
         let index = notes.indexOf(oldNote);
         let newNotes = notes;
         newNotes[index] = updatedNote.data;
-        setNotes(newNotes);
+        fetchNotes();
     }
 
     const searchNotes = async (query) => {
@@ -52,7 +51,8 @@ const Notes = (props) => {
         setNotes(queryNotes.data);
     }
 
-    if (!currentNote) {
+
+    if (currentNote._id === '') {
         props.setIsOpen(true);
     }
 
