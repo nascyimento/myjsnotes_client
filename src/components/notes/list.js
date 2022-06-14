@@ -8,7 +8,7 @@ const ListNotes = (props) => {
 
     useEffect(() => {
         props.fetchNotes();
-    },[props.isOpen]);
+    }, [props.isOpen]);
 
     return (
         <Fragment>
@@ -18,12 +18,7 @@ const ListNotes = (props) => {
                         {props.notes.length} Notes
                     </Title>
                     <Column size={2}>
-                        <Button state="active" color="custom-purple" outlined size="small" onClick={() => {
-                            props.createNote()
-                            setTimeout(() => {
-                                props.setIsOpen(false);
-                            }, 10);
-                        }}>
+                        <Button state="active" color="custom-purple" outlined size="small" onClick={() => props.createNote()}>
                             Create Note
                         </Button>
                     </Column>
@@ -31,13 +26,18 @@ const ListNotes = (props) => {
             </Column.Group>
             <List className="notes-list">
                 {props.notes.map((item, key) =>
-                    <List.Item key={key} onClick={() => props.selectNote(item._id)} active={item._id == props.currentNote._id}>
-                        <Title size={6}>
-                            {item.title}
-                        </Title>
-                        <Title size={6} subtitle >
-                            {item.body.replace(/(<([^>]+)>)/ig, " ").substring(0, 100)}
-                        </Title>
+                    <List.Item key={key} active={item._id == props.currentNote._id}>
+                        <div onClick={() => {
+                            props.selectNote(item._id)
+                            props.setIsOpen(false);
+                        }} className='note-preview'>
+                            <Title size={6}>
+                                {item.title}
+                            </Title>
+                            <Title size={6} subtitle >
+                                {item.body.replace(/(<([^>]+)>)/ig, " ").substring(0, 100)}
+                            </Title>
+                        </div>
 
                         <Column.Group breakpoint="mobile">
                             <Column size={10}>
@@ -45,12 +45,9 @@ const ListNotes = (props) => {
                                     {Moment(item.createdAt).format('DD/MM')}
                                 </Tag>
                             </Column>
-                            <Column size={2} onClick={() => props.deleteNote(item._id)}>
+                            <Column size={2} onClick={() => props.deleteNote(item)}>
                                 <FontAwesomeIcon
                                     icon={faTrash}
-                                    onClick={() => {
-                                        props.deleteNote(item);
-                                    }}
                                     color="grey"
                                 />
                             </Column>
