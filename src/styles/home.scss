@@ -14,17 +14,13 @@
   border-radius: 15px;
 }
 
-.columns {
+.container .columns {
   align-items: center;
 }
 
 @media (max-width: 790px) {
-  .columns {
-    flex-direction: column !important;
-    align-items: center;
-  }
-
-  img.presentation {
+  .columns.is-6:nth-child(2) {
     display: none;
   }
+   
 }
