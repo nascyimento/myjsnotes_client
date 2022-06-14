@@ -40,7 +40,6 @@ const Notes = (props) => {
     }
 
     const updateNote = async (oldNote, params) => {
-        console.log(oldNote._id)
         let updatedNote = await NotesService.update(oldNote._id, params);
         let index = notes.indexOf(oldNote);
         let newNotes = notes;

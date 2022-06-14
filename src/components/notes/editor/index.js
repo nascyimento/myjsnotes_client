@@ -38,20 +38,8 @@ const Editor = (props) => {
         }
     }, [quill]);
 
-    const modules = {
-        toolbar: [
-            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-            ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' },
-            { 'indent': '-1' }, { 'indent': '+1' }],
-            ['link'],
-            ['clean'],
-        ]
-    }
-
     return (
         <Fragment>
-            {/* <ReactQuill value={currentContent} modules={modules} onChange={handleChange} /> */}
             <div style={{ width: "100%", height: "100%" }}>
                 <div ref={quillRef} />
             </div>
