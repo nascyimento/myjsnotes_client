@@ -26,7 +26,7 @@ const ListNotes = (props) => {
             </Column.Group>
             <List className="notes-list">
                 {props.notes.map((item, key) =>
-                    <List.Item key={key} active={item._id == props.currentNote._id}>
+                    <List.Item key={key} active={item._id === props.currentNote._id}>
                         <div onClick={() => {
                             props.selectNote(item._id)
                             props.setIsOpen(false);

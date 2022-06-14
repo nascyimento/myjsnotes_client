@@ -1,5 +1,4 @@
-import { Fragment, useState, useEffect, useRef } from "react";
-import ReactQuill from 'react-quill';
+import { Fragment, useEffect, useRef } from "react";
 import 'react-quill/dist/quill.snow.css';
 import { useQuill } from 'react-quilljs';
 
@@ -30,17 +29,6 @@ const Editor = (props) => {
     const updateNote = async (oldNote, newNote) => {
         let title = newNote.replace(/(<([^>]+)>)/ig, " ").substring(0, 15);
         props.updateNote(oldNote, { 'title': title, 'body': newNote })
-    }
-
-    const modules = {
-        toolbar: [
-            [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
-            ['bold', 'italic', 'underline', 'strike', 'blockquote', 'code-block'],
-            [{ 'list': 'ordered' }, { 'list': 'bullet' },
-            { 'indent': '-1' }, { 'indent': '+1' }],
-            ['link'],
-            ['clean'],
-        ]
     }
 
     return (
