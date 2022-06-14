@@ -17,15 +17,20 @@ html {
 }
 
 .bm-item-list {
-  height: calc(100vh - 112px) !important;
+  height: calc(100% - 70px) !important;
   overflow: auto;
   overflow-x: hidden;
+  padding: 20px 0;
+  .button {
+    color: #fff;
+  }
 }
+
+
 
 .bm-menu-wrap,
 .bm-overlay {
   z-index: 1 !important;
-  top: 113px;
 }
 
 .list-item.is-active {
@@ -43,10 +48,4 @@ html {
 
 .note-preview {
   padding-bottom: 15px;
-}
-
-@media (max-width: 770px) {
-  .columns {
- //   flex-direction: column !important;
-  }
 }
