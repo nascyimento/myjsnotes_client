@@ -14,7 +14,7 @@ const Notes = (props) => {
 
     const selectNote = (id) => {
         let note = notes.find((note) => {
-            return note._id === id;
+            return note._id == id;
         })
         setCurrentNote(note);
     }

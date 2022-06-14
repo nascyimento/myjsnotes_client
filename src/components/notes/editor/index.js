@@ -33,7 +33,7 @@ const Editor = (props) => {
         if (quill) {
             quill.on('text-change', (delta, oldDelta, source) => {
                 let content = quillRef.current.firstChild.innerHTML;
-                handleChange(quillRef.current.firstChild.innerHTML, delta, source);
+                handleChange(content, delta, source);
             });
         }
     }, [quill]);
