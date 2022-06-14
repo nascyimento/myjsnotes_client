@@ -39,18 +39,20 @@ const HeaderLogged = (props) => {
                     </Navbar.Burger>
                 </Navbar.Brand>
                 <Navbar.Menu>
-                    <Navbar.Segment as="div" className="navbar-item navbar-start" align="start">
+                    <Navbar.Segment as="div" className="navbar-item navbar-end" align="right">
                         <Navbar.Item as="div">
                             <Button
                                 className="open-button"
                                 color="white"
                                 outlined
-                                onClick={() => props.setIsOpen(!props.isOpen)}>
+                                onClick={() => {
+                                    document.querySelector('.navbar-menu').classList.remove('is-active');
+                                    document.querySelector('.navbar-burger').classList.remove('is-active');
+                                    props.setIsOpen(!props.isOpen)
+                                }}>
                                 <FontAwesomeIcon icon={faList} />
                             </Button>
                         </Navbar.Item>
-                    </Navbar.Segment>
-                    <Navbar.Segment as="div" className="navbar-item navbar-end" align="right">
                         <Navbar.Item as="div">
                             <Dropdown>
                                 <Dropdown.Trigger>

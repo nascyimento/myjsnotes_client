@@ -2,9 +2,13 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Moment from 'moment';
 import { Button, Column, List, Tag, Title } from "rbx";
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 
 const ListNotes = (props) => {
+
+    useEffect(() => {
+        props.fetchNotes();
+    },[props.isOpen]);
 
     return (
         <Fragment>
@@ -27,7 +31,7 @@ const ListNotes = (props) => {
             </Column.Group>
             <List className="notes-list">
                 {props.notes.map((item, key) =>
-                    <List.Item key={key} onClick={() => props.selectNote(item._id)} active={item === props.currentNote}>
+                    <List.Item key={key} onClick={() => props.selectNote(item._id)} active={item._id == props.currentNote._id}>
                         <Title size={6}>
                             {item.title}
                         </Title>
@@ -54,7 +58,7 @@ const ListNotes = (props) => {
                     </List.Item>
                 )}
             </List>
-        </Fragment>
+        </Fragment >
     )
 }
 

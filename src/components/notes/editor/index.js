@@ -5,8 +5,8 @@ import { useQuill } from 'react-quilljs';
 
 const Editor = (props) => {
 
+    let oldNote = useRef(null);
 
-    let oldNote = useRef(null)
     const { quill, quillRef } = useQuill();
     useEffect(() => {
         if (quill) {
@@ -27,11 +27,9 @@ const Editor = (props) => {
     }, [quill]);
 
 
-    const updateNote = (oldNote, newNote) => {
-        console.log('newNote ', newNote)
-        console.log('oldnote ', oldNote)
+    const updateNote = async (oldNote, newNote) => {
         let title = newNote.replace(/(<([^>]+)>)/ig, " ").substring(0, 15);
-        props.updateNote(oldNote, { 'title': title, 'body': newNote });
+        props.updateNote(oldNote, { 'title': title, 'body': newNote })
     }
 
     const modules = {
@@ -50,7 +48,6 @@ const Editor = (props) => {
             <div style={{ width: '100%', height: '100%' }}>
                 <div ref={quillRef} />
             </div>
-            {/* <ReactQuill value={currentContent} modules={modules} onChange={handleChange} /> */}
         </Fragment>
     )
 }

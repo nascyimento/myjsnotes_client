@@ -14,7 +14,7 @@ const Notes = (props) => {
 
     const selectNote = (id) => {
         let note = notes.find((note) => {
-            return note._id == id;
+            return note._id === id;
         })
         setCurrentNote(note);
     }
@@ -22,6 +22,7 @@ const Notes = (props) => {
     useEffect(() => {
         fetchNotes();
     }, []);
+
 
     const fetchNotes = async () => {
         const response = await NotesService.index();
@@ -43,7 +44,7 @@ const Notes = (props) => {
         let index = notes.indexOf(oldNote);
         let newNotes = notes;
         newNotes[index] = updatedNote.data;
-        fetchNotes();
+        return updatedNote.data;
     }
 
     const searchNotes = async (query) => {

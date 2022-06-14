@@ -38,4 +38,8 @@ nav.navbar {
       margin-top: 15px !important;
     }
   }
+  .navbar-item {
+    display: flex;
+    justify-content: end;
+  }
 }
