@@ -52,16 +52,19 @@ const Notes = (props) => {
         setNotes(queryNotes.data);
     }
 
+    useEffect(() => {
+        if (currentNote._id === '') {
+            props.setIsOpen(true);
+        }
+    }, [currentNote._id, props]);
 
-    if (currentNote._id === '') {
-        props.setIsOpen(true);
-    }
-
-    if (props.isOpen) {
-        document.body.style = 'overflow-y: hidden'
-    } else {
-        document.body.style = ''
-    }
+    useEffect(() => {
+        if (props.isOpen) {
+            document.body.style = 'overflow-y: hidden'
+        } else {
+            document.body.style = ''
+        }
+    }, [props.isOpen]);
 
     return (
         <Fragment>
@@ -90,14 +93,12 @@ const Notes = (props) => {
                         deleteNote={deleteNote}
                         fetchNotes={fetchNotes} />
                 </Menu>
-                {currentNote &&
-                    <Column size={12} className="notes-editor" id="notes-editor">
-                        <Editor
-                            note={currentNote}
-                            updateNote={updateNote}
-                        />
-                    </Column>
-                }
+                <Column size={12} className="notes-editor" id="notes-editor">
+                    <Editor
+                        note={currentNote}
+                        updateNote={updateNote}
+                    />
+                </Column>
             </Column.Group>
         </Fragment>
     )
