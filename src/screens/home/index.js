@@ -1,11 +1,16 @@
 import { Column, Container, Section } from 'rbx';
 import { Fragment } from 'react';
+import { Navigate } from 'react-router-dom';
 import presentationImg from '../../assets/images/presentation.png';
 import { Header } from '../../components/header';
 import '../../styles/home.scss';
 import { RegisterScreen } from '../auth/register';
 
 const HomeScreen = () => {
+
+    if (localStorage.getItem('jwtoken'))
+        Navigate({ to: '/notes' })
+
     return (
         <Fragment>
             <Header
@@ -29,3 +34,4 @@ const HomeScreen = () => {
 }
 
 export { HomeScreen };
+

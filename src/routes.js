@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PrivateRoute from "./components/auth/private_route";
 import { HomeScreen } from './screens/home';
