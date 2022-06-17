@@ -1,6 +1,6 @@
-import { useState, Fragment } from "react";
+import { Button, Column, Control, Field, Help, Input, Label } from "rbx";
+import { Fragment, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, Field, Control, Input, Column, Help, Label } from "rbx";
 import UsersService from "../../../services/users";
 
 const LoginForm = () => {
@@ -21,13 +21,15 @@ const LoginForm = () => {
         }
     }
 
-    if (redirectToNotes) {
-        return navigate("/notes");
-    }
+    useEffect(() => {
+        if (redirectToNotes) {
+            return navigate("/notes");
+        }
+    }, [redirectToNotes]);
 
     return (
         <Fragment>
-            <Column.Group centered>
+            <Column.Group centered >
                 <form onSubmit={handleSubmit}>
                     <Column size={12}>
                         <Field>
@@ -74,4 +76,4 @@ const LoginForm = () => {
     );
 }
 
-export { LoginForm }
+export { LoginForm };

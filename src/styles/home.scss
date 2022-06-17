@@ -8,6 +8,8 @@
 .home {
   background-color: $custom-purple;
   min-height: calc(100vh - 70px);
+  display: flex;
+  align-items: center;
 }
 
 .card-content {
@@ -18,9 +20,30 @@
   align-items: center;
 }
 
-@media (max-width: 768px) {
-  .container > .columns > .is-6:nth-child(2) {
+.presentation-item {
+  display: none;
+  transition: 1.5s;
+}
+
+.show {
+  display: block;
+}
+
+.column > .title {
+  margin: 12px;
+}
+
+@media (max-width: 960px) {
+  .home .columns {
+    display: flex;
+    justify-content: center;
+  }
+
+  .auth-form {
+    width: 75% !important;
+  }
+
+  .presentation {
     display: none;
   }
-   
 }

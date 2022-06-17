@@ -1,15 +1,18 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PrivateRoute from "./components/auth/private_route";
 import { HomeScreen } from './screens/home';
-import { LoginHomeScreen } from "./screens/home/loginHomeScreen";
+import { LoginHomeScreen } from "./screens/home/loginScreen";
+import { RegisterHomeScreen } from "./screens/home/registerScreen";
 import { NotesScreen } from "./screens/notes/index";
 import { UserEditScreen } from "./screens/users/edit";
+
 
 const AppRoutes = () => (
     <BrowserRouter>
         <Routes>
             <Route exact path='/' element={<HomeScreen />} />
             <Route exact path='/login' element={<LoginHomeScreen />} />
+            <Route exact path='/register' element={<RegisterHomeScreen />} />
             <Route exact path='/notes' element={<PrivateRoute />}>
                 <Route exact path='/notes' element={<NotesScreen />} />
             </Route>

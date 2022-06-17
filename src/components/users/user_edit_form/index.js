@@ -1,11 +1,13 @@
 import { Button, Column, Control, Field, Help, Input, Label } from "rbx";
 import { Fragment, useEffect, useState } from 'react';
 import UsersService from '../../../services/users';
+import { Navigate } from "react-router-dom";
 
 const UsersEditForm = () => {
-    const [email, setEmail] = useState("");
-    const [name, setName] = useState("");
-    const [status, setStatus] = useState(null);
+    let [email, setEmail] = useState("");
+    let [name, setName] = useState("");
+    let [status, setStatus] = useState(null);
+    let [redirectToLogin, setRedirectToLogin] = useState(false)
 
     const initializeUser = async () => {
         const user = await JSON.parse(localStorage.getItem('user'));
@@ -19,14 +21,20 @@ const UsersEditForm = () => {
 
     const handleSubmit = async (evt) => {
         evt.preventDefault();
-        
+
         try {
             await UsersService.update({ email: email, name: name });
+            await UsersService.logout();
             setStatus("success");
+            setRedirectToLogin(true)
         } catch (err) {
+            console.log(err)
             setStatus("error");
         }
     }
+
+    if (redirectToLogin)
+        return <Navigate to={{ pathname: "/login" }} />
 
     return (
         <Fragment>

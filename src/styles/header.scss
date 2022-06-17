@@ -8,6 +8,9 @@ nav.navbar {
       height: 40px;
     }
   }
+  .navbar-burger {
+    margin-top: 10px;
+  }
 }
 
 .navbar-brand {
@@ -36,13 +39,11 @@ nav.navbar {
 }
 
 @media (max-width: 1024px) {
-  .navbar-brand {
-    img {
-      margin-top: 15px !important;
-    }
+  .navbar-brand a {
+    margin-top: 10px;
   }
   .navbar-item {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
   }
 }

@@ -19,7 +19,8 @@ const UserEditScreen = () => (
                         </Title>
                         <Card>
                             <Card.Content>
-                                <UsersEditForm/>
+                                <UsersEditForm />
+                                You'll be redirected to login
                             </Card.Content>
                         </Card>
                     </Column>
@@ -32,14 +33,14 @@ const UserEditScreen = () => (
                         </Title>
                         <Card>
                             <Card.Content>
-                               <UsersEditFormPassword/>
+                                <UsersEditFormPassword />
                             </Card.Content>
                         </Card>
                     </Column>
                 </Column.Group>
                 <Column.Group centered>
                     <Column size={4} className="has-text-right">
-                        <UsersDelete/>
+                        <UsersDelete />
                     </Column>
                 </Column.Group>
             </Container>
