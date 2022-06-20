@@ -12,6 +12,10 @@
   align-items: center;
 }
 
+.home .columns > :nth-child(2) {
+  padding: 0;
+}
+
 .card-content {
   border-radius: 15px;
 }
@@ -31,6 +35,12 @@
 
 .column > .title {
   margin: 12px;
+}
+
+@media (max-width: 550px) {
+  .home .columns > :nth-child(2) {
+    display: none;
+  }
 }
 
 @media (max-width: 960px) {
