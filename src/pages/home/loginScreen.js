@@ -1,13 +1,13 @@
 import { Column, Container, Section, Title } from 'rbx';
-import { Fragment, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import presentationImg from '../../assets/images/presentation.png';
 import { Header } from '../../components/header';
 import '../../styles/home.scss';
-import { RegisterScreen } from '../auth/register';
+import { LoginScreen } from '../auth/login';
 
 
-const RegisterHomeScreen = (props) => {
+const LoginHomeScreen = (props) => {
 
     useEffect(() => {
         let content = document.querySelectorAll('.presentation-item');
@@ -27,16 +27,16 @@ const RegisterHomeScreen = (props) => {
         Navigate({ to: '/notes' })
 
     return (
-        <Fragment>
+        < >
             <Header
-                authOption='Log in'
-                link='/login'
+                authOption='Sing in'
+                link='/register'
             />
             <Section className="home">
                 <Container>
                     <Column.Group>
                         <Column size={6} className="auth-form">
-                            <RegisterScreen />
+                            <LoginScreen />
                         </Column>
                         <Column size={6} className='presentation'>
                             <div className="presentation-container">
@@ -49,9 +49,9 @@ const RegisterHomeScreen = (props) => {
                     </Column.Group>
                 </Container>
             </Section>
-        </Fragment>
+        </ >
     )
 }
 
-export { RegisterHomeScreen };
+export { LoginHomeScreen };
 

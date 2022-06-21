@@ -1,10 +1,9 @@
 import { Card, Column, Container, Section, Title } from 'rbx';
-import React, { Fragment } from 'react';
 import logoImg from '../../../assets/images/logo.png';
-import { RegisterForm } from '../../../components/auth/register_form';
+import { LoginForm } from '../../../components/auth/login_form';
 
-const RegisterScreen = () => (
-    <Fragment>
+const LoginScreen = () => (
+    < >
         <Container className="auth">
             <Column.Group centered>
                 <Column size={10}>
@@ -13,26 +12,25 @@ const RegisterScreen = () => (
                             <Section>
                                 <Column.Group centered>
                                     <Column size={12}>
-                                        <img loading='lazy' src={logoImg} alt='JavaScript Notes Logo'/>
+                                        <img loading='lazy' src={logoImg} alt='JavaScript Notes Logo' />
                                     </Column>
                                 </Column.Group>
 
                                 <Column.Group>
                                     <Column size={12}>
                                         <Title size={6} className="has-text-grey has-text-centered">
-                                            Create notes easily and access when you wants on the cloud
+                                            Your notes on the cloud
                                         </Title>
                                     </Column>
                                 </Column.Group>
-                                <RegisterForm />
+                                <LoginForm />
                             </Section>
                         </Card.Content>
                     </Card>
                 </Column>
             </Column.Group>
         </Container>
-    </Fragment>
+    </ >
 );
 
-export { RegisterScreen };
-
+export { LoginScreen };

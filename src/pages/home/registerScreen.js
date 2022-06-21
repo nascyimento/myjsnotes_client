@@ -1,13 +1,13 @@
 import { Column, Container, Section, Title } from 'rbx';
-import { Fragment, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import presentationImg from '../../assets/images/presentation.png';
 import { Header } from '../../components/header';
 import '../../styles/home.scss';
-import { LoginScreen } from '../auth/login';
+import { RegisterScreen } from '../auth/register';
 
 
-const LoginHomeScreen = (props) => {
+const RegisterHomeScreen = (props) => {
 
     useEffect(() => {
         let content = document.querySelectorAll('.presentation-item');
@@ -21,22 +21,22 @@ const LoginHomeScreen = (props) => {
             prev = next;
             next++
         }, 4500);
-    },[]);
+    }, []);
 
     if (localStorage.getItem('jwtoken'))
         Navigate({ to: '/notes' })
 
     return (
-        <Fragment>
+        < >
             <Header
-                authOption='Sing in'
-                link='/register'
+                authOption='Log in'
+                link='/login'
             />
             <Section className="home">
                 <Container>
                     <Column.Group>
                         <Column size={6} className="auth-form">
-                            <LoginScreen />
+                            <RegisterScreen />
                         </Column>
                         <Column size={6} className='presentation'>
                             <div className="presentation-container">
@@ -49,9 +49,9 @@ const LoginHomeScreen = (props) => {
                     </Column.Group>
                 </Container>
             </Section>
-        </Fragment>
+        </ >
     )
 }
 
-export { LoginHomeScreen };
+export { RegisterHomeScreen };
 

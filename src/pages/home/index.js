@@ -1,5 +1,4 @@
 import { Column, Container, Section, Title } from 'rbx';
-import { Fragment } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import presentationImg from '../../assets/images/presentation.png';
 import { Header } from '../../components/header';
@@ -11,7 +10,7 @@ const HomeScreen = () => {
         Navigate({ to: '/notes' })
 
     return (
-        <Fragment>
+        < >
             <Header
                 authOption='Login'
                 link='/login'
@@ -39,7 +38,7 @@ const HomeScreen = () => {
                     </Column.Group>
                 </Container>
             </Section>
-        </Fragment>
+        </ >
     )
 }
 

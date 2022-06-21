@@ -1,5 +1,5 @@
 import { Button, Column, Control, Field, Help, Input, Label } from "rbx";
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import UsersService from '../../../services/users';
 
 const UsersEditFormPassword = () => {
@@ -24,7 +24,7 @@ const UsersEditFormPassword = () => {
     }
 
     return (
-        <Fragment>
+        < >
             <form onSubmit={handleSubmit}>
                 <Field>
                     <Control>
@@ -70,7 +70,7 @@ const UsersEditFormPassword = () => {
                     <Help color="primary">Updated with success</Help>
                 }
             </form>
-        </Fragment>
+        </ >
     )
 }
 

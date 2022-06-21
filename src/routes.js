@@ -1,10 +1,10 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import PrivateRoute from "./components/auth/private_route";
-import { HomeScreen } from './screens/home';
-import { LoginHomeScreen } from "./screens/home/loginScreen";
-import { RegisterHomeScreen } from "./screens/home/registerScreen";
-import { NotesScreen } from "./screens/notes/index";
-import { UserEditScreen } from "./screens/users/edit";
+import { HomeScreen } from './pages/home';
+import { LoginHomeScreen } from "./pages/home/loginScreen";
+import { RegisterHomeScreen } from "./pages/home/registerScreen";
+import { NotesScreen } from "./pages/notes/index";
+import { UserEditScreen } from "./pages/users/edit";
 
 
 const AppRoutes = () => (

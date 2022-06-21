@@ -1,5 +1,5 @@
 import { Button, Column, Control, Field, Help, Input, Label } from "rbx";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UsersService from "../../../services/users";
 
@@ -28,7 +28,7 @@ const LoginForm = () => {
     }, [redirectToNotes]);
 
     return (
-        <Fragment>
+        < >
             <Column.Group centered >
                 <form onSubmit={handleSubmit}>
                     <Column size={12}>
@@ -72,7 +72,7 @@ const LoginForm = () => {
                     </Column>
                 </form>
             </Column.Group>
-        </Fragment>
+        </ >
     );
 }
 

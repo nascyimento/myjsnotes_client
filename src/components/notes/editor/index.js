@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import 'react-quill/dist/quill.snow.css';
 import { useQuill } from 'react-quilljs';
 
@@ -32,11 +32,11 @@ const Editor = (props) => {
     }
 
     return (
-        <Fragment>
+        < >
             <div style={{ width: '100%', height: '100%' }}>
                 <div ref={quillRef} />
             </div>
-        </Fragment>
+        </ >
     )
 }
 

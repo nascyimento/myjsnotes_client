@@ -1,5 +1,4 @@
 import { Card, Column, Container, Section, Title } from "rbx";
-import { Fragment } from 'react';
 import { HeaderLogged } from "../../../components/header_logged";
 import { UsersDelete } from "../../../components/users/user_delete";
 import { UsersEditForm } from "../../../components/users/user_edit_form/index.js";
@@ -8,7 +7,7 @@ import "../../../styles/users.scss";
 
 
 const UserEditScreen = () => (
-    <Fragment>
+    < >
         <HeaderLogged />
         <Section size="medium" className="users">
             <Container>
@@ -45,7 +44,7 @@ const UserEditScreen = () => (
                 </Column.Group>
             </Container>
         </Section>
-    </Fragment>
+    </ >
 );
 
 export { UserEditScreen };

@@ -2,7 +2,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Moment from 'moment';
 import { Button, Column, List, Tag, Title } from "rbx";
-import React, { Fragment, useEffect } from 'react';
+import React, { useEffect } from 'react';
 
 const ListNotes = (props) => {
 
@@ -11,7 +11,7 @@ const ListNotes = (props) => {
     }, [props.isOpen]);
 
     return (
-        <Fragment>
+        < >
             <Column.Group breakpoint="mobile">
                 <Column size={6} offset={1}>
                     <Title size={6}>
@@ -55,7 +55,7 @@ const ListNotes = (props) => {
                     </List.Item>
                 )}
             </List>
-        </Fragment >
+        </  >
     )
 }
 

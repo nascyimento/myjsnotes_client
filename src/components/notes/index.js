@@ -1,5 +1,5 @@
 import { Column } from "rbx";
-import { Fragment, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { push as Menu } from 'react-burger-menu';
 import NotesService from "../../services/notes";
 import { ListNotes } from "./list";
@@ -67,7 +67,7 @@ const Notes = (props) => {
     }, [props.isOpen]);
 
     return (
-        <Fragment>
+        < >
             <Column.Group className="notes" id="notes">
                 <Menu
                     pageWrapId={"notes-editor"}
@@ -100,7 +100,7 @@ const Notes = (props) => {
                     />
                 </Column>
             </Column.Group>
-        </Fragment>
+        </ >
     )
 }
 

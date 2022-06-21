@@ -1,5 +1,5 @@
 import { Button, Column, Control, Field, Help, Input, Label } from "rbx";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UsersService from "../../../services/users";
 import "../../../styles/auth.scss";
@@ -29,7 +29,7 @@ const RegisterForm = () => {
     }
 
     return (
-        <Fragment>
+        < >
             <Column.Group centered>
                 <form onSubmit={handleSubmit}>
                     <Column size={12}>
@@ -82,7 +82,7 @@ const RegisterForm = () => {
                     </Column>
                 </form>
             </Column.Group>
-        </Fragment>
+        </ >
     );
 }
 

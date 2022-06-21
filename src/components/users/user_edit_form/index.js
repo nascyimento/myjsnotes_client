@@ -1,5 +1,5 @@
 import { Button, Column, Control, Field, Help, Input, Label } from "rbx";
-import { Fragment, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import UsersService from '../../../services/users';
 import { Navigate } from "react-router-dom";
 
@@ -37,7 +37,7 @@ const UsersEditForm = () => {
         return <Navigate to={{ pathname: "/login" }} />
 
     return (
-        <Fragment>
+        < >
             <form onSubmit={handleSubmit}>
                 <Field>
                     <Control>
@@ -80,7 +80,7 @@ const UsersEditForm = () => {
                     <Help color="primary">Updated with success</Help>
                 }
             </form>
-        </Fragment>
+        </ >
     )
 }
 
