@@ -3,7 +3,7 @@ import PrivateRoute from "./components/auth/private_route";
 import { HomeScreen } from './pages/home';
 import { LoginHomeScreen } from "./pages/home/loginScreen";
 import { RegisterHomeScreen } from "./pages/home/registerScreen";
-import { NotesScreen } from "./pages/notes/index";
+import { NotesScreen } from "./pages/notes/index/index";
 import { UserEditScreen } from "./pages/users/edit";
 
 

@@ -1,7 +1,7 @@
 import { Card, Column, Container, Section, Title } from "rbx";
 import { HeaderLogged } from "../../../components/header_logged";
 import { UsersDelete } from "../../../components/users/user_delete";
-import { UsersEditForm } from "../../../components/users/user_edit_form/index.js";
+import { UsersEditForm } from "../../../components/users/user_edit_form/index.jsx";
 import { UsersEditFormPassword } from "../../../components/users/user_edit_password_form";
 import "../../../styles/users.scss";
 
