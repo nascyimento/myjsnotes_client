@@ -28,7 +28,6 @@ const UsersEditForm = () => {
             setStatus("success");
             setRedirectToLogin(true)
         } catch (err) {
-            console.log(err)
             setStatus("error");
         }
     }
