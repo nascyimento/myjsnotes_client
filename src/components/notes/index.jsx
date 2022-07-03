@@ -24,16 +24,18 @@ const Notes = (props) => {
 
   const handleScroll = useCallback(() => {
     if (window.scrollY > 70) {
+      document.querySelector(".ql-editor").style = `margin-top: ${document.querySelector(".ql-toolbar").getBoundingClientRect().height}px`;
       document.querySelector(".ql-toolbar").classList.add("fixed");
     } else {
       document.querySelector(".ql-toolbar").classList.remove("fixed");
+      document.querySelector(".ql-editor").style = ``;
     }
   }, []);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     fetchNotes();
-  }, []);
+  }, [handleScroll]);
 
   useEffect(() => {
     if (currentNote._id === "") {
