@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 const ListNotes = (props) => {
   useEffect(() => {
     props.fetchNotes();
-  }, [props, props.isOpen]);
+  }, [props.isOpen]);
 
   return (
     <>
