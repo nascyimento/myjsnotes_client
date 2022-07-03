@@ -26,8 +26,6 @@ html {
   }
 }
 
-
-
 .bm-menu-wrap,
 .bm-overlay {
   z-index: 1 !important;
@@ -48,4 +46,16 @@ html {
 
 .note-preview {
   padding-bottom: 15px;
+}
+
+.fixed {
+  position: fixed;
+  width: 100%;
+  background: white;
+  z-index: 2;
+  top: 0;
+}
+
+.mt {
+  margin-top: 42px;
 }
