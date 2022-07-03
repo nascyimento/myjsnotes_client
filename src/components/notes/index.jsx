@@ -24,7 +24,9 @@ const Notes = (props) => {
 
   const handleScroll = useCallback(() => {
     if (window.scrollY > 70) {
-      document.querySelector(".ql-editor").style = `margin-top: ${document.querySelector(".ql-toolbar").getBoundingClientRect().height}px`;
+      document.querySelector(".ql-editor").style = `margin-top: ${
+        document.querySelector(".ql-toolbar").getBoundingClientRect().height
+      }px`;
       document.querySelector(".ql-toolbar").classList.add("fixed");
     } else {
       document.querySelector(".ql-toolbar").classList.remove("fixed");
@@ -52,8 +54,16 @@ const Notes = (props) => {
   }, [props.isOpen]);
 
   const fetchNotes = async () => {
-    const response = await NotesService.index();
-    setNotes(response.data.reverse());
+    const { data } = await NotesService.index();
+    setNotes(
+      data.sort((a, b) =>
+        new Date(a.updatedAt) > new Date(b.updatedAt)
+          ? -1
+          : new Date(a.updatedAt) < new Date(b.updatedAt)
+          ? 1
+          : 0
+      )
+    );
   };
 
   const createNote = async () => {
@@ -67,11 +77,9 @@ const Notes = (props) => {
   };
 
   const updateNote = async (oldNote, params) => {
-    let updatedNote = await NotesService.update(oldNote._id, params);
-    let index = notes.indexOf(oldNote);
+    let { data } = await NotesService.update(oldNote._id, params);
     let newNotes = notes;
-    newNotes[index] = updatedNote.data;
-    return updatedNote.data;
+    newNotes[notes.indexOf(oldNote)] = data;
   };
 
   const searchNotes = async (query) => {

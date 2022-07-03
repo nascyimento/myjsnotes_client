@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 const ListNotes = (props) => {
   useEffect(() => {
     props.fetchNotes();
-  }, [props.isOpen]);
+  }, [props, props.isOpen]);
 
   return (
     <>
@@ -39,7 +39,7 @@ const ListNotes = (props) => {
             >
               <Title size={6}>{item.title}</Title>
               <Title size={6} subtitle>
-                {item.body.replace(/(<([^>]+)>)/gi, " ").substring(0, 100)}
+                {item.body.replace(/(<([^>]+)>)/gi, "").substring(0, 100)}
               </Title>
             </div>
 

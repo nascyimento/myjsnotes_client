@@ -29,8 +29,12 @@ const Editor = (props) => {
   }, [quill]);
 
   const updateNote = async (oldNote, newNote) => {
-    let title = newNote.replace(/(<([^>]+)>)/gi, " ").substring(0, 15);
-    props.updateNote(oldNote, { title: title, body: newNote });
+    let title = newNote.replace(/(<([^>]+)>)/gi, "").substring(0, 20);
+    props.updateNote(oldNote, {
+      title: title,
+      body: newNote,
+      updatedAt: new Date(),
+    });
   };
 
   return (
