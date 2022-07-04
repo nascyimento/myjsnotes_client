@@ -9,11 +9,7 @@ import { useCallback } from "react";
 
 const Notes = (props) => {
   const [notes, setNotes] = useState([]);
-  const [currentNote, setCurrentNote] = useState({
-    title: "",
-    body: "",
-    _id: "",
-  });
+  const [currentNote, setCurrentNote] = useState({ title: "", body: "", _id: "" });
 
   const selectNote = (id) => {
     let note = notes.find((note) => {
@@ -23,10 +19,8 @@ const Notes = (props) => {
   };
 
   const handleScroll = useCallback(() => {
-    if (window.scrollY > 70) {
-      document.querySelector(".ql-editor").style = `margin-top: ${
-        document.querySelector(".ql-toolbar").getBoundingClientRect().height
-      }px`;
+    if (window.scrollY > document.querySelector(".navbar").getBoundingClientRect().height) {
+      document.querySelector(".ql-editor").style = `margin-top: ${document.querySelector(".ql-toolbar").getBoundingClientRect().height}px`;
       document.querySelector(".ql-toolbar").classList.add("fixed");
     } else {
       document.querySelector(".ql-toolbar").classList.remove("fixed");
@@ -55,15 +49,7 @@ const Notes = (props) => {
 
   const fetchNotes = async () => {
     const { data } = await NotesService.index();
-    setNotes(
-      data.sort((a, b) =>
-        new Date(a.updatedAt) > new Date(b.updatedAt)
-          ? -1
-          : new Date(a.updatedAt) < new Date(b.updatedAt)
-          ? 1
-          : 0
-      )
-    );
+    setNotes(data);
   };
 
   const createNote = async () => {
