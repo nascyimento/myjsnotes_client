@@ -87,11 +87,15 @@ const Notes = (props) => {
     <>
       <Column.Group className="notes" id="notes">
         <Menu
-          pageWrapId={"notes-editor"}
+          pageWrapId={
+            document.querySelector("#notes-editor") ? "notes-editor" : null
+          }
           isOpen={props.isOpen}
           onStateChange={(state) => props.setIsOpen(state.isOpen)}
           disableAutoFocus
-          outerContainerId={"notes"}
+          outerContainerId={
+            document.querySelector("#notes-editor") ? "notes-editor" : null
+          }
           customBurgerIcon={false}
           customCrossIcon={false}
         >
