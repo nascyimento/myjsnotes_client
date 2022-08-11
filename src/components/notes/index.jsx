@@ -40,7 +40,7 @@ const Notes = (props) => {
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     fetchNotes();
-    return window.removeEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
   useEffect(() => {
